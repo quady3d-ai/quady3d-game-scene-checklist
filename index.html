@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>Game Scene Asset Delivery Checklist | Quady3D AI</title>
+  <meta name="description" content="A practical checklist for preparing generated 3D assets for modular game scene assembly.">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: #202124;
+      background: #f7f7f8;
+    }
+    body { margin: 0; }
+    main {
+      width: min(760px, calc(100% - 40px));
+      margin: 48px auto;
+      padding: 40px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      box-sizing: border-box;
+    }
+    h1 { margin-top: 0; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; }
+    h2 { margin-top: 2rem; font-size: 1.35rem; }
+    li { margin: 0.45rem 0; }
+    a { color: #b3126f; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 52px; height: 52px; border-radius: 12px; }
+    .preview { width: 100%; margin: 1.5rem 0 0.5rem; border: 1px solid #e5e7eb; border-radius: 14px; }
+    .caption { margin-top: 0; color: #5f6368; font-size: 0.9rem; }
+    .eyebrow { color: #b3126f; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    footer { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid #e5e7eb; color: #5f6368; }
+    @media (max-width: 600px) {
+      main { width: min(100% - 24px, 760px); margin: 12px auto; padding: 24px; border-radius: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <img src="quady3d-logo-512.png" alt="Quady3D AI Pink M logo">
+      <p class="eyebrow">Quady3D AI workflow note</p>
+    </div>
+    <h1>Game Scene Asset Delivery Checklist</h1>
+    <p>A generated model becomes reusable scene content only after its delivery contract is clear. Use this checklist before an asset moves from inspection into Blender or a game engine.</p>
+    <img class="preview" src="quady3d-image-to-3d-1270x760.jpg" alt="Quady3D Image to 3D workspace with an asset ready for inspection">
+    <p class="caption">A browser workspace can speed up the first asset pass; engine readiness still depends on the checks below.</p>
+
+    <h2>Geometry and scale</h2>
+    <ul>
+      <li>Confirm world units, up axis, forward direction, and export scale.</li>
+      <li>Inspect silhouettes from front, side, back, top, and perspective views.</li>
+      <li>Check topology, normals, disconnected parts, hidden faces, and unnecessary density.</li>
+      <li>Place the pivot for snapping, hinges, floor contact, rotation, or modular assembly.</li>
+    </ul>
+
+    <h2>Materials and textures</h2>
+    <ul>
+      <li>Name material slots consistently across variants.</li>
+      <li>Verify UV scale and seams where modules meet.</li>
+      <li>Confirm delivered PBR channels and destination shader mappings.</li>
+      <li>Match texture resolution and compression to the expected camera distance.</li>
+    </ul>
+
+    <h2>Scene assembly</h2>
+    <ul>
+      <li>Measure connection faces and snap points on walls, floors, doors, props, and trim.</li>
+      <li>Keep coordinate conventions identical across the kit.</li>
+      <li>Build simple collision shapes instead of relying on the render mesh.</li>
+      <li>Record socket names, attachment points, and required hierarchy.</li>
+    </ul>
+
+    <h2>Performance</h2>
+    <ul>
+      <li>Define triangle and material budgets before creating LODs.</li>
+      <li>Inspect silhouette changes at each LOD transition.</li>
+      <li>Check draw calls, texture memory, overdraw, and collision complexity.</li>
+      <li>Test in a representative scene, not only an empty viewport.</li>
+    </ul>
+
+    <h2>Reproducible handoff</h2>
+    <p>Store the source reference, selected generation path, exported file, inspection notes, repair decisions, and engine test results together. A workflow such as <a href="https://quady3d.com/image-to-3d">Quady3D Image to 3D</a> can help create and inspect the initial model, but the checks above determine whether the asset is ready for reliable scene assembly.</p>
+
+    <footer>Published by Quady3D AI.</footer>
+  </main>
+</body>
+</html>
